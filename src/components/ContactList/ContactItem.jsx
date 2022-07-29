@@ -2,11 +2,11 @@
 import s from './ContactList.module.css';
 
 export const ContactItem = ({ contact,onDelete }) => {
-  const { id, name, phone } = contact;
+  const { id, name, number} = contact;
   return (
     <li className={s.list__item}>
       <p className={s.text}>{name}</p>
-      <p className={s.text}>{phone}</p>
+      <p className={s.text}>{number}</p>
       <button
          className={s.button}
          type="button"

@@ -24,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route
+          index
           path="register"
           element={
             <PublicRoute>

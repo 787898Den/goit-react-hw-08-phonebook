@@ -30,12 +30,9 @@ export function ContactForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     const isContact = contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
-
-    console.log(isContact);
 
     if (!isContact) {
       dispatch(contactsOperations.addContact({ name, number: phone }));
@@ -48,7 +45,9 @@ export function ContactForm() {
   const reset = () => {
     setName('');
     setPhone('');
-  };
+  };;
+
+ 
 
   return (
     <form className={s.form} action="submit" onSubmit={handleSubmit}>
