@@ -1,12 +1,14 @@
 import { useState } from 'react';
-import { useAddContactMutation,useFetchContactsQuery } from 'redux/api';
+import { useDispatch, useSelector } from 'react-redux';
+import contactsOperations from 'redux/contacts/operations';
+import { getContacts } from 'redux/contacts/selectors';
 import s from './ContactForm.module.css';
 
 export function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [addContact] = useAddContactMutation();
-  const { data } = useFetchContactsQuery();
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
 
   const handleInputChange = e => {
     const { name, value } = e.currentTarget;
@@ -27,12 +29,12 @@ export function ContactForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const isContact = data.find(
+    const isContact = contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
 
     if (!isContact) {
-      addContact({ name, phone });
+      dispatch(contactsOperations.addContact({ name, phone }));
       reset();
       return;
     }
