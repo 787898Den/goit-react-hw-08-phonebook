@@ -7,6 +7,7 @@ import s from './ContactForm.module.css';
 export function ContactForm() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
@@ -23,18 +24,21 @@ export function ContactForm() {
         break;
 
       default:
-         throw new Error();
+        throw new Error();
     }
   };
 
   const handleSubmit = e => {
     e.preventDefault();
+
     const isContact = contacts.find(
       contact => contact.name.toLowerCase() === name.toLowerCase()
     );
 
+    console.log(isContact);
+
     if (!isContact) {
-      dispatch(contactsOperations.addContact({ name, phone }));
+      dispatch(contactsOperations.addContact({ name, number: phone }));
       reset();
       return;
     }
@@ -82,3 +86,10 @@ export function ContactForm() {
     </form>
   );
 }
+
+
+
+
+
+
+
