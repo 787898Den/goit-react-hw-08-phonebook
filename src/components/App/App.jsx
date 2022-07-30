@@ -9,6 +9,7 @@ import {ContactForm} from 'components/ContactForm/ContactForm';
 import {Filter} from 'components/Filter/Filter';
 import {ContactList} from 'components/ContactList';
 import { PublicRoute } from 'components/PublicRoute';
+import { Container } from './App.styled';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,13 +19,15 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="container">
+    <Container>
       <AppBar />
 
       <Routes>
-        <Route path="/" element={<HomeView />} />
+        <Route 
+        path="/"
+        element={<HomeView />} 
+        />
         <Route
-          index
           path="register"
           element={
             <PublicRoute>
@@ -33,6 +36,7 @@ function App() {
           }
         />
         <Route
+          index
           path="login"
           element={
             <PublicRoute>
@@ -45,14 +49,14 @@ function App() {
           element={
             <PrivateRoute>
               <ContactForm />
-              <Filter title="Find contact by name" />
+              <Filter title="Find contact" />
               <ContactList />
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<></>} />
+        <Route path="*" element={<HomeView />} />
       </Routes>
-    </div>
+    </Container>
   );
 }
 
