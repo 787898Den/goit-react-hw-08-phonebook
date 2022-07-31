@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
  export const LabelFilter = styled.label `
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
     width: 100%;
@@ -16,8 +17,8 @@ import styled from '@emotion/styled';
   `;
   
   export const InputFilter = styled.input `
-    justify-content: center;
-    width: 400px;
-    height: 40px;
     font-size: 24px;
+    justify-content: center;
+    width: 300px;
+    height: 40px;
   `;

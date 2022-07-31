@@ -4,6 +4,7 @@ export const Form = styled.form `
   border: 1px solid black;
   padding: 20px;
   background-color: rgba(36, 83, 122, 0.792);
+  border-radius: 50px;
   `;
 
 
@@ -40,7 +41,8 @@ width: 140px;
 text-decoration: none;
 margin: 0 auto;
 color: white;
-border-radius: 10px;cursor: pointer;
+border-radius: 10px;
+cursor: pointer;
 background-color: rgb(113, 169, 176);
 padding: 5px;
 border: none;
