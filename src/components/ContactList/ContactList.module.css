@@ -18,14 +18,20 @@
   }
 
   .button{
+    font-weight: 500;
+    font-size: 18px;
     width: 70px;
     display: block;
     margin: 0 auto;
     cursor: pointer;
     font-family: inherit;
     font-weight: bold;
-    font-size: 16px;
-    background-color: #87CEFA;
-    padding: 8px;
+    color: white;
+    background-color: rgb(113, 169, 176);
+    padding:5px;
     border-radius: 10px;
+    border: none;
+  }
+  .button:hover, .button:focus{
+    background-color: red;
   }

@@ -16,6 +16,7 @@ export const Container = styled.div `
 export const Label = styled.label `
   display: flex;
   align-items: center;
+  flex-direction: column;
   margin-bottom: 25px;
   width: 100%;
   font-size: 24px;
@@ -32,15 +33,18 @@ export const Input = styled.input `
 `;
 
 export const Button = styled.button`
-width: 170px;
-height: 50px;
-display: block;
+font-weight: 500;
+font-size: 22px;
+display: inline-block;
+width: 140px;
+text-decoration: none;
 margin: 0 auto;
-cursor: pointer;
-font-family: inherit;
-font-weight: bold;
-font-size: 16px;
-background-color: #32de84;
-padding: 8px;
-border-radius: 10px;
+color: white;
+border-radius: 10px;cursor: pointer;
+background-color: rgb(113, 169, 176);
+padding: 5px;
+border: none;
+&:hover,
+&:focus {
+  color: red;
 `;

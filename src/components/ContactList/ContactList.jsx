@@ -6,7 +6,6 @@ import s from './ContactList.module.css';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-
   const filteredContacts = useSelector(getFilteredContacts);
 
   return (

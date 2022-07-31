@@ -1,21 +1,18 @@
 import { Routes, Route } from 'react-router-dom';
-import { HomeView, LoginView, RegisterView } from 'views';
+import { HomeView, LoginView, RegisterView,ContactsView,NotFoundView } from 'views';
 import AppBar from 'components/AppBar/AppBar';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { authOperations } from 'redux/auth';
+import {fetchCurrentUser} from 'redux/auth/auth-operation';
 import { PrivateRoute } from 'components/PrivateRoute';
-import {ContactForm} from 'components/ContactForm/ContactForm';
-import {Filter} from 'components/Filter/Filter';
-import {ContactList} from 'components/ContactList';
 import { PublicRoute } from 'components/PublicRoute';
 import { Container } from './App.styled';
 
-function App() {
+export function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(authOperations.fetchCurrentUser());
+    dispatch(fetchCurrentUser());
   }, [dispatch]);
 
   return (
@@ -48,16 +45,12 @@ function App() {
           path="contacts"
           element={
             <PrivateRoute>
-              <ContactForm />
-              <Filter title="Find contact" />
-              <ContactList />
+            <ContactsView />
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<HomeView />} />
+        <Route path="*" element={<NotFoundView/>} />
       </Routes>
     </Container>
   );
 }
-
-export { App };

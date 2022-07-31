@@ -11,3 +11,4 @@ export const getFilteredContacts = state => {
     })
     .sort((a, b) => a.name.localeCompare(b.name));
 };
+export const getLoading = state => state.contacts.isLoading;

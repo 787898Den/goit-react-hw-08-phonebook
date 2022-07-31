@@ -1,19 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import  authOperations from '../../redux/auth/auth-operations';
-
-const styles = {
-  form: {
-    width: 320,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import  { logIn } from 'redux/auth/auth-operation';
+import { Form,Label,Input,Button, Container } from './LoginView.styled';
 
 export default function LoginView() {
   const dispatch = useDispatch();
@@ -33,38 +21,40 @@ export default function LoginView() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(authOperations.logIn({ email, password }));
+    dispatch(logIn({ email, password }));
     setEmail('');
     setPassword('');
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
+    <Container>
+      <Form onSubmit={handleSubmit}  autoComplete="off">
+        <Label>
           Email
-          <input
+          <Input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            required
+            placeholder="mail@mail"
           />
-        </label>
+        </Label>
 
-        <label style={styles.label}>
+        <Label>
           Password
-          <input
+          <Input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            required
+            placeholder="password"
           />
-        </label>
+        </Label>
 
-        <button type="submit">Sign In</button>
-      </form>
-    </div>
+        <Button type="submit">Sign In</Button>
+      </Form>
+    </Container>
   );
 }

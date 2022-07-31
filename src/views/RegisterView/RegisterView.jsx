@@ -1,19 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import  authOperations from '../../redux/auth/auth-operations';
-
-const styles = {
-  form: {
-    width: 320,
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  },
-  label: {
-    display: 'flex',
-    flexDirection: 'column',
-    marginBottom: 15,
-  },
-};
+import { register } from 'redux/auth/auth-operation';
+import { Button, Container, Form, Input, Label } from './Register.styled';
 
 export default function RegisterView() {
   const dispatch = useDispatch();
@@ -21,59 +9,83 @@ export default function RegisterView() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleChange = ({ target: { name, value } }) => {
+  const handleChange = event => {
+    const { name, value } = event.currentTarget;
+
     switch (name) {
       case 'name':
-        return setName(value);
+        setName(value);
+        break;
       case 'email':
-        return setEmail(value);
-      case 'password':
-        return setPassword(value);
+        setEmail(value);
+        break;
+        case 'password':
+        setPassword(value);
+        break;
       default:
         return;
     }
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    dispatch(authOperations.register({ name, email, password }));
+  const handleAddContact = ({ name, email, password }) => {
+    const newUser = { name, email, password };
+    dispatch(register(newUser))
+    // toast.success(`${name} added to contacts!`);
+  };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    handleAddContact({ name, email, password });
+    formFieldsReset();
+  };
+
+  const formFieldsReset = () => {
     setName('');
     setEmail('');
     setPassword('');
   };
 
   return (
-    <div>
-      <h1>Registration</h1>
-
-      <form onSubmit={handleSubmit} style={styles.form} autoComplete="off">
-        <label style={styles.label}>
+    <Container>
+      <Form onSubmit={handleSubmit} autoComplete="off">
+        <Label>
           Name
-          <input type="text" name="name" value={name} onChange={handleChange} />
-        </label>
+          <Input 
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleChange}
+            required
+            placeholder="Name"
+            />
+        </Label>
 
-        <label style={styles.label}>
+        <Label >
           Email
-          <input
+          <Input
             type="email"
             name="email"
             value={email}
             onChange={handleChange}
+            required
+            placeholder="mail@mail"
           />
-        </label>
+        </Label>
 
-        <label style={styles.label}>
+        <Label>
           Password
-          <input
+          <Input
             type="password"
             name="password"
             value={password}
             onChange={handleChange}
+            required
+            placeholder="password"
           />
-        </label>
+        </Label>
 
-        <button type="submit">Register</button>
-      </form>
-    </div>
+        <Button type="submit">Registration</Button>
+      </Form>
+    </Container>
   );
 }
