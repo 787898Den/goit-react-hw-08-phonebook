@@ -6,7 +6,7 @@ export const ContactItem = ({ contact,onDelete }) => {
   return (
     <li className={s.list__item}>
       <p className={s.text}>{name}</p>
-      <p className={s.text}>{number}</p>
+      <p className={s.number}>{number}</p>
       <button
          className={s.button}
          type="button"

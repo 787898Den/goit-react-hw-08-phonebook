@@ -11,9 +11,8 @@ import styled from '@emotion/styled';
   `;
   
   export const TitleText = styled.p`
-    text-align: center;
-    margin-right: 20px;
     font-weight: 500;
+    color: #686868;
   `;
   
   export const InputFilter = styled.input `

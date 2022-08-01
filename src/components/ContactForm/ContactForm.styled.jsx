@@ -3,7 +3,8 @@ import styled from '@emotion/styled';
 export const Form = styled.form `
   border: 1px solid black;
   padding: 20px;
-  background-color: rgba(36, 83, 122, 0.792);
+  background-color: #74EBD5;
+background-image: radial-gradient( circle 759px at -6.7% 50%,  rgba(80,131,73,1) 0%, rgba(140,209,131,1) 26.2%, rgba(178,231,170,1) 50.6%, rgba(144,213,135,1) 74.1%, rgba(75,118,69,1) 100.3% );
   border-radius: 50px;
   `;
 
@@ -24,7 +25,7 @@ export const Label = styled.label `
 `;
 
 export const Title = styled.span `
-  margin-right: 25px;
+  color:#686868;
 `;
 
 export const Input = styled.input `
@@ -43,10 +44,13 @@ margin: 0 auto;
 color: white;
 border-radius: 10px;
 cursor: pointer;
-background-color: rgb(113, 169, 176);
+background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
 padding: 5px;
 border: none;
+
 &:hover,
 &:focus {
-  color: red;
+  color: yellow;
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
 `;

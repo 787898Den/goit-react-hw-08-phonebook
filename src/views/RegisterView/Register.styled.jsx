@@ -32,11 +32,13 @@ font-size: 20px;
 display: inline-block;
 width: 120px;
 text-decoration: none;
-color: black;
+color: #7D866F;
 border-radius: 20px;
-background-color: rgb(113, 169, 176);
+background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 padding: 5px;
 &:hover,
 &:focus {
-  color: red;
+  color:#87C94C;
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
   `;

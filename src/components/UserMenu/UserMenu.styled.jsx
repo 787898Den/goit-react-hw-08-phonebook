@@ -6,14 +6,14 @@ align-items: center;
 `;
 
 export const Img = styled.img`
-margin-right: 5px;
-width: 40px;
+margin-right:7px;
+width: 36px;
 `;
 
 export const Name = styled.span`
 font-weight: 700;
 margin-right: 10px;
-color: orange;
+color: #6A8ED4;
 `;
 
 export const Button = styled.button`
@@ -22,12 +22,16 @@ export const Button = styled.button`
   display: inline-block;
   width: 75px;
   text-decoration: none;
-  color: white;
   border-radius: 10px;
-  background-color: rgb(113, 169, 176);
   padding: 5px;
-  border: none;
+  border:none;
+  color: #fff;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% );
+  box-shadow: 0 0 40px 40px #B4B2A3 inset;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
   &:hover,
-  &:focus {
-    color: red;
+  &:focus{
+  box-shadow: 0 0 10px 0 red inset, 0 0 10px 4px red;
+  }
 `;

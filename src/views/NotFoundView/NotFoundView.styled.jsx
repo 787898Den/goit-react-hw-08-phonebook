@@ -16,10 +16,12 @@ export const Link = styled(NavLink)`
   text-decoration: none;
   color: white;
   border-radius: 10px;
-  background-color: rgb(113, 169, 176);
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% );
   padding: 5px;
   &:hover,
   &:focus {
-    color: red;
+    color: #FBAB7E;
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
   }
 `
