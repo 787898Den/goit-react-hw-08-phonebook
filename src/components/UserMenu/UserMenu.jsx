@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { authSelectors } from 'redux/auth';
+import  authSelectors  from 'redux/auth/auth-selectors';
 import { logOut } from 'redux/auth/auth-operation';
 import defaultAvatar from 'images/avatar.png';
 import { Button, Container, Img, Name, } from './UserMenu.styled';
