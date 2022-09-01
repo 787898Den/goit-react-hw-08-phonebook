@@ -36,9 +36,11 @@ color: #7D866F;
 border-radius: 20px;
 background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
 padding: 5px;
+-webkit-transition: all 150ms ease-in-out;
+transition: all 150ms ease-in-out;
 &:hover,
 &:focus {
-  color:#87C94C;
+ color: #00f53d;
   box-shadow: #422800 2px 2px 0 0;
   transform: translate(2px, 2px);
   `;

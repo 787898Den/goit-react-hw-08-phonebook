@@ -13,5 +13,5 @@ color: #ACE1AF;
 
 `;
 export const Image = styled.img`
-width: 500;
+width: 380px;
 `

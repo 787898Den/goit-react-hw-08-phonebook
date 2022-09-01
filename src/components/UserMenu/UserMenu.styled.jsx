@@ -26,12 +26,14 @@ export const Button = styled.button`
   padding: 5px;
   border:none;
   color: #fff;
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% );
+  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
   box-shadow: 0 0 40px 40px #B4B2A3 inset;
   -webkit-transition: all 150ms ease-in-out;
   transition: all 150ms ease-in-out;
   &:hover,
   &:focus{
-  box-shadow: 0 0 10px 0 red inset, 0 0 10px 4px red;
+    color: #f84109;
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
   }
 `;
